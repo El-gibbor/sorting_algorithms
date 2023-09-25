@@ -28,4 +28,5 @@ int partition(int *arr, int start_idx, int last_idx, int size);
 void quick(int *arr, int start_idx, int last_idx, int size);
 void selection_sort(int *array, size_t size);
 int index_of_min(int *arr, int start_index, size_t size);
+void shell_sort(int *array, size_t size);
 #endif

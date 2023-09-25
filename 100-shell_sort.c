@@ -7,11 +7,11 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
-
 	size_t gap, i, j;
 	int temp;
+
+	if (array == NULL || size < 2)
+		return;
 
 	/* Calculate initial gap using Knuth's sequence */
 	for (gap = 1; gap < size / 3;)
