@@ -8,23 +8,23 @@
  */
 void bubble_sort(int *array, size_t size)
 {
+    int bubble_up;
+	size_t i, j;
+
 	if (!array || size < 2)
 		return;
 
-	int bubble_up;
-	size_t i, j, arr_size = size - 1;
-
-	for (i = 0; i < arr_size; i++)
+	for (i = 0; i < size; i++)
 	{
-		/* size - i - 1 avoids redundant comparism of sorted elems*/
-		for (j = 0; j < arr_size - i; j++)
+		/* size - i - 1 avoids redundant comparism of sorted elems */
+		for (j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
 				bubble_up = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = bubble_up;
-				print_array(array, arr_size);
+				print_array(array, size);
 			}
 		}
 	}
