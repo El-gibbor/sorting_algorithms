@@ -7,7 +7,7 @@
   */
 void quick_sort(int *array, size_t size)
 {
-	quick(array, 0, size - 1, size);
+	quick_recursive(array, 0, size - 1, size);
 }
 
 /**
@@ -50,20 +50,20 @@ int partition(int *arr, int start_idx, int last_idx, int size)
 }
 
 /**
-  * quick - performs the quick sort recursively
+  * quick_recursive - performs the quick sort recursively
   * @start_idx: The starting index
   * @last_idx: The last index
   * @arr: The array we are sorting
   * @size: The size of the array
   */
-void quick(int *arr, int start_idx, int last_idx, int size)
+void quick_recursive(int *arr, int start_idx, int last_idx, int size)
 {
 	int pivot_idx;
 
 	if (start_idx < last_idx)
 	{
 		pivot_idx = partition(arr, start_idx, last_idx, size);
-		quick(arr, start_idx, pivot_idx - 1, size);
-		quick(arr, pivot_idx + 1, last_idx, size);
+		quick_recursive(arr, start_idx, pivot_idx - 1, size);
+		quick_recursive(arr, pivot_idx + 1, last_idx, size);
 	}
 }
